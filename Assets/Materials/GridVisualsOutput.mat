@@ -39,7 +39,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
-    - _BUILTIN_QueueControl: 0
+    - _BUILTIN_QueueControl: 1
     - _BUILTIN_QueueOffset: 0
     - _thickness: 0.05
     m_Colors:
