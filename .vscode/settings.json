@@ -51,5 +51,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "rumble2D.sln"
+    "dotnet.defaultSolution": "RumbleBeat.sln"
 }
