@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DiabloStunAnimation
+  m_Name: CloudStrike
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,17 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -1336485644, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - time: 0.083333336
-      value: {fileID: -620389338, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - time: 0.16666667
-      value: {fileID: -1451128578, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - time: 0.25
-      value: {fileID: -961905616, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - time: 0.33333334
-      value: {fileID: -337814270, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - time: 0.41666666
-      value: {fileID: -1705760433, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
+      value: {fileID: 21300000, guid: b83db83a8acb2984db049d7f1bcc56af, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -54,18 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -1336485644, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - {fileID: -620389338, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - {fileID: -1451128578, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - {fileID: -961905616, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - {fileID: -337814270, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
-    - {fileID: -1705760433, guid: d0f3e7c10a767c34f947a57cd779516d, type: 3}
+    - {fileID: 21300000, guid: b83db83a8acb2984db049d7f1bcc56af, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.5
+    m_StopTime: 0.083333336
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

@@ -37,7 +37,8 @@ public class RaindropManager : MonoBehaviour
         Vector3 spawnPos = transform.position;
 
         Vector3Int cell = tilemap.WorldToCell(spawnPos);
-        spawnPos.x = tilemap.GetCellCenterWorld(new Vector3Int(cell.x, cell.y, cell.z)).x;
+        float randomCorrection = Random.Range(-2, 2);
+        spawnPos.x = tilemap.GetCellCenterWorld(new Vector3Int(cell.x, cell.y, cell.z)).x + randomCorrection;
 
         Instantiate(raindropPrefab, spawnPos, Quaternion.identity);
     }

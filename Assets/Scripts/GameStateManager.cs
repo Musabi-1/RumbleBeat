@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using Unity.VisualScripting;
+using UnityEngine.Tilemaps;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -19,8 +20,17 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject gameClearPanel;
 
+    [Header("Tilemap Refresher")]
+    [SerializeField] private Tilemap tileMap;
+
     private float currentTime;
     private bool gameEnded = false;
+
+    private void Awake()
+    {
+        if (tileMap != null)
+            tileMap.CompressBounds();
+    }
 
     private void Start()
     {

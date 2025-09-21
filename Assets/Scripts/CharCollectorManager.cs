@@ -7,14 +7,18 @@ using TMPro;
 public class CharCollectorManager : MonoBehaviour
 {
     [SerializeField] private float stunDuration = 1.5f;
+    [SerializeField] private float lightningStun = 2.5f;
     [SerializeField] private TextMeshProUGUI coinText;
     private int coinCount = 0;
     private CharacterMovement movement;
     private bool isStunned = false;
+    private Animator diabloAnim;
+    private Animator coinAnim;
 
     private void Awake()
     {
         movement = GetComponent<CharacterMovement>();
+        diabloAnim = GetComponentInChildren<Animator>();
         if (movement == null)
             Debug.LogError("CharacterMovement script not found on this obj!");
     }
@@ -28,8 +32,9 @@ public class CharCollectorManager : MonoBehaviour
     {
         if (other.CompareTag("Coin"))
         {
+            coinAnim = other.GetComponentInChildren<Animator>();
+            coinAnim.SetTrigger("Collect");
             coinCount++;
-            DestroyWholeObject(other);
             UpdateCoinUI();
         }
         else if (other.CompareTag("Raindrop"))
@@ -41,16 +46,24 @@ public class CharCollectorManager : MonoBehaviour
                 if (movement != null)
                     movement.Stun(stunDuration);
 
-                StartCoroutine(StunCooldown());
+                StartCoroutine(StunCooldown(stunDuration));
             }
+        }
+        else if (other.CompareTag("Lightning"))
+        {
+            if (movement != null)
+                movement.Stun(lightningStun);
+            StartCoroutine(StunCooldown(lightningStun));
         }
     }
 
-    private IEnumerator StunCooldown()
+    private IEnumerator StunCooldown(float secs)
     {
         isStunned = true;
-        yield return new WaitForSeconds(stunDuration);
+        diabloAnim.SetBool("Stun", true);
+        yield return new WaitForSeconds(secs);
         isStunned = false;
+        diabloAnim.SetBool("Stun", false);
     }
 
     private void DestroyWholeObject(Collider2D other)

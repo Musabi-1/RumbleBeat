@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d0f3e7c10a767c34f947a57cd779516d
+guid: a93888665387fe34697e5da31ad32712
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,11 +110,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DiabloStunSheet_0
+      name: DiabloStun_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 1536
+        y: 0
         width: 512
         height: 512
       alignment: 0
@@ -124,18 +124,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af5845437c06ce64ab7b11c3b3838fba
-      internalID: -1336485644
+      spriteID: 6386f614f0c4abc418501af86d942ffc
+      internalID: -1665214694
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiabloStunSheet_1
+      name: DiabloStun_1
       rect:
         serializedVersion: 2
         x: 512
-        y: 1536
+        y: 0
         width: 512
         height: 512
       alignment: 0
@@ -145,18 +145,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b86caa550324eea4ba77c2c0e93b3e9b
-      internalID: -620389338
+      spriteID: 20ee86a9bff8840409e1f30c6920ab1d
+      internalID: -786606257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DiabloStunSheet_2
+      name: DiabloStun_2
       rect:
         serializedVersion: 2
         x: 1024
-        y: 1536
+        y: 0
         width: 512
         height: 512
       alignment: 0
@@ -166,71 +166,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1a6c52c72f5359641bf302384809d483
-      internalID: -1451128578
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiabloStunSheet_3
-      rect:
-        serializedVersion: 2
-        x: 1536
-        y: 1536
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8f49e7df71019c4dbd5328499c22fa4
-      internalID: -961905616
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiabloStunSheet_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b88fd4d1039b333458ada04ec3b1398e
-      internalID: -337814270
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DiabloStunSheet_5
-      rect:
-        serializedVersion: 2
-        x: 512
-        y: 1024
-        width: 512
-        height: 512
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 590a5922e68f21a4796f5dc1b51ccdff
-      internalID: -1705760433
+      spriteID: bd193f796e42c2e4f95c8d8a544b0fc6
+      internalID: -1183498313
       vertices: []
       indices: 
       edges: []
@@ -246,12 +183,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      DiabloStunSheet_0: -1336485644
-      DiabloStunSheet_1: -620389338
-      DiabloStunSheet_2: -1451128578
-      DiabloStunSheet_3: -961905616
-      DiabloStunSheet_4: -337814270
-      DiabloStunSheet_5: -1705760433
+      DiabloStun_0: -1665214694
+      DiabloStun_1: -786606257
+      DiabloStun_2: -1183498313
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
