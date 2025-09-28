@@ -12,37 +12,22 @@ public class GameStateManager : MonoBehaviour
     [SerializeField] private float stageTime = 90f;
     [SerializeField] private TextMeshProUGUI timerText;
 
-    [Header("CoinSettings")]
-    [SerializeField] private CharCollectorManager charCollector;
-    [SerializeField] private int targetCoinCount = 3;
-
     [Header("UI Panels")]
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject gameClearPanel;
 
-    [Header("Tilemap Refresher")]
-    [SerializeField] private Tilemap tileMap;
-
     private float currentTime;
     private bool gameEnded = false;
-
-    private void Awake()
-    {
-        if (tileMap != null)
-            tileMap.CompressBounds();
-    }
+    private bool minutesNeeded = false;
 
     private void Start()
     {
-        if (charCollector == null)
-            Debug.LogError("CharCollectorManager not found!");
-
         currentTime = stageTime;
         UpdateTimerUI();
 
         if (gameOverPanel != null) gameOverPanel.SetActive(false);
         if (gameClearPanel != null) gameClearPanel.SetActive(false);
-
+        if (stageTime >= 60) minutesNeeded = true;
     }
 
     private void Update()
@@ -50,23 +35,24 @@ public class GameStateManager : MonoBehaviour
         if (gameEnded) return;
 
         currentTime -= Time.deltaTime;
-        if (currentTime < 0f) currentTime = 0f;
 
-        UpdateTimerUI();
-
-        if (charCollector != null && charCollector.GetCoinCount() >= targetCoinCount)
+        if (currentTime <= 0f)
         {
-            GameClear();
-        }
-        else if (currentTime <= 0f)
-        {
+            currentTime = 0f;
             GameOver();
         }
+        UpdateTimerUI();
     }
 
     private void UpdateTimerUI()
     {
         if (timerText == null) return;
+
+        if (!minutesNeeded)
+        {
+            timerText.text = Mathf.FloorToInt(currentTime).ToString();
+            return;
+        }
 
         int minutes = Mathf.FloorToInt(currentTime / 60f);
         int seconds = Mathf.FloorToInt(currentTime % 60f);
@@ -81,7 +67,7 @@ public class GameStateManager : MonoBehaviour
             gameOverPanel.SetActive(true);
     }
 
-    private void GameClear()
+    public void GameClear()
     {
         gameEnded = true;
         Time.timeScale = 0f;
