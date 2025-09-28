@@ -2151,8 +2151,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1941596234}
   - component: {fileID: 1941596235}
+  - component: {fileID: 1941596236}
   m_Layer: 0
-  m_Name: GameStateManager
+  m_Name: Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2189,6 +2190,19 @@ MonoBehaviour:
   timerText: {fileID: 1886184698}
   gameOverPanel: {fileID: 1973626432}
   gameClearPanel: {fileID: 2043739701}
+--- !u!114 &1941596236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1941596233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc8dd806f3b749458ef53f872eb0460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1899097394}
 --- !u!1 &1973626432
 GameObject:
   m_ObjectHideFlags: 0

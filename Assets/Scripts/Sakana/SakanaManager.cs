@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class SakanaManager : MonoBehaviour
 {
     [SerializeField] private GameObject sakanaPrefab;
-    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private TilemapLogic tilemapLogic;
     [SerializeField] private float defaultSpawnInterval = 2f;
     [SerializeField] private float intervalRandomBias = 1f;
 
@@ -15,20 +15,7 @@ public class SakanaManager : MonoBehaviour
 
     private void Start()
     {
-        if (tilemap == null)
-        {
-            Debug.LogError("tilemap not assigned");
-        }
-
-        BoundsInt bounds = tilemap.cellBounds;
-
-        for (int y = bounds.yMin; y < bounds.yMax; y++)
-        {
-            Vector3Int cellPos = new Vector3Int(0, y, 0);
-            float worldY = tilemap.GetCellCenterWorld(cellPos).y;
-            if (!spawnRows.Contains(worldY))
-                spawnRows.Add(worldY);
-        }
+        spawnRows = tilemapLogic.GetSpawnRows();
 
         spawnRows.Sort();
         StartCoroutine(SakanaSpawn());

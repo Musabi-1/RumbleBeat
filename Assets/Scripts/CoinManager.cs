@@ -7,7 +7,7 @@ public class CoinManager : MonoBehaviour
 {
     [SerializeField] private int spawnCount = 4;
     [SerializeField] private float spawnSeconds = 2f;
-    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private TilemapLogic tilemapLogic;
     [SerializeField] private GameObject fallingPrefab;
 
     private List<float> availableHeights = new List<float>();
@@ -15,12 +15,6 @@ public class CoinManager : MonoBehaviour
 
     private void Start()
     {
-        if (tilemap == null || fallingPrefab == null)
-        {
-            Debug.LogError("Tilemap or Prefab not assigned");
-            return;
-        }
-
         RefreshAvailableHeights();
         PrepareSpawnQueue();
 
@@ -37,18 +31,7 @@ public class CoinManager : MonoBehaviour
     {
         availableHeights.Clear();
 
-        Vector3Int baseCell = tilemap.WorldToCell(transform.position);
-        int x = baseCell.x;
-
-        for (int y = tilemap.cellBounds.yMin; y < tilemap.cellBounds.yMax; y++)
-        {
-            Vector3Int checkCell = new Vector3Int(x, y, 0);
-            if (tilemap.HasTile(checkCell))
-            {
-                float worldY = tilemap.GetCellCenterWorld(checkCell).y;
-                availableHeights.Add(worldY);
-            }
-        }
+        availableHeights = tilemapLogic.GetTilemapYatX(transform.position.x);
     }
 
     private void PrepareSpawnQueue()

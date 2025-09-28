@@ -6,7 +6,7 @@ using UnityEngine.Tilemaps;
 public class FlagBehaviour : MonoBehaviour
 {
     [SerializeField] private Animator flagAnimator;
-    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private TilemapLogic tilemapLogic;
 
     [Tooltip("Name of the jump animation in the Animator")]
     [SerializeField] private string jumpAnimationName = "FlagJump";
@@ -16,44 +16,11 @@ public class FlagBehaviour : MonoBehaviour
 
     private void Start()
     {
-        Vector3 targetWorldPos = GetRightmostMiddleCellPosition();
+        Vector3 targetWorldPos = tilemapLogic.GetRightmostMiddleCellPosition();
         float clipLength = GetAnimationClipLength(jumpAnimationName);
         flagAnimator.SetTrigger("Jump");
 
         StartCoroutine(MoveFlag(targetWorldPos, clipLength));
-    }
-
-    private Vector3 GetRightmostMiddleCellPosition()
-    {
-        BoundsInt bounds = tilemap.cellBounds;
-        int maxX = bounds.xMin;
-
-        for (int x = bounds.xMin; x < bounds.xMax; x++)
-        {
-            for (int y = bounds.yMin; y < bounds.yMax; y++)
-            {
-                if (tilemap.HasTile(new Vector3Int(x, y, 0)))
-                {
-                    maxX = Mathf.Max(maxX, x);
-                }
-            }
-        }
-
-        List<int> yPositions = new List<int>();
-        for (int y = bounds.yMin; y < bounds.yMax; y++)
-        {
-            if (tilemap.HasTile(new Vector3Int(maxX, y, 0)))
-            {
-                yPositions.Add(y);
-            }
-        }
-
-        int middleY = yPositions[yPositions.Count / 2];
-
-        Vector3Int cellPos = new Vector3Int(maxX, middleY, 0);
-        Vector3 worldPos = tilemap.GetCellCenterWorld(cellPos);
-
-        return worldPos;
     }
 
     private float GetAnimationClipLength(string clipName) {

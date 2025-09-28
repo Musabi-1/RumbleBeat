@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Animations;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,8 +8,9 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float waitTime = 0.2f;
     [SerializeField] private Grid grid;
-    [SerializeField] private Tilemap walkableTilemap;
-
+    [SerializeField] private TilemapLogic tilemapLogic;
+    [SerializeField] private GameObject MCSprite;
+    private Vector3 originalScale;
     private Vector3Int currentCell;
     private float moveCoolDown = 0f;
     private Vector3 targetPosition;
@@ -25,6 +27,8 @@ public class CharacterMovement : MonoBehaviour
         currentCell = grid.WorldToCell(transform.position);
         targetPosition = grid.GetCellCenterWorld(currentCell);
         transform.position = targetPosition;
+
+        originalScale = MCSprite.transform.localScale;
     }
 
     private void Update()
@@ -57,11 +61,18 @@ public class CharacterMovement : MonoBehaviour
         if (move != Vector3Int.zero)
         {
             Vector3Int targetCell = currentCell + move;
-            if (IsWalkable(targetCell))
+            if (tilemapLogic.IsWalkable(targetCell))
             {
                 currentCell = targetCell;
                 targetPosition = grid.GetCellCenterWorld(currentCell);
                 isMoving = true;
+
+                if (move.x != 0)
+                {
+                    Vector3 scale = MCSprite.transform.localScale;
+                    scale.x = move.x > 0 ? -Mathf.Abs(originalScale.x) : Mathf.Abs(originalScale.x);
+                    MCSprite.transform.localScale = scale;
+                }
             }
         }
     }
@@ -76,10 +87,5 @@ public class CharacterMovement : MonoBehaviour
         canMove = false;
         yield return new WaitForSeconds(duration);
         canMove = true;
-    }
-
-    private bool IsWalkable(Vector3Int cellPosition)
-    {
-        return walkableTilemap.HasTile(cellPosition);
     }
 }

@@ -9,39 +9,14 @@ public class RainGenerator : MonoBehaviour
     [SerializeField] private float defaultSpawnInterval = 1.5f;
     [SerializeField] private float intervalRandomBias = 1f;
     [SerializeField] private GameObject raindropPrefab;
-    [SerializeField] private Tilemap tilemap;
+    [SerializeField] private TilemapLogic tilemapLogic;
 
     private List<float> spawnColumns = new List<float>();
     private float spawnInterval;
 
     private void Start()
     {
-        if (tilemap == null)
-        {
-            Debug.LogError("tilemap not assigned");
-            return;
-        }
-
-        BoundsInt bounds = tilemap.cellBounds;
-
-        for (int x = bounds.xMin; x < bounds.xMax; x++)
-        {
-            for (int y = bounds.yMin; y < bounds.xMax; y++)
-            {
-                Vector3Int cellPos = new Vector3Int(x, y, 0);
-                if (tilemap.HasTile(cellPos))
-                {
-                    float worldX = tilemap.GetCellCenterWorld(cellPos).x;
-
-                    if (!spawnColumns.Contains(worldX))
-                    {
-                        spawnColumns.Add(worldX);
-                    }
-
-                    break;
-                }
-            }
-        }
+        spawnColumns = tilemapLogic.GetSpawnColumns();
 
         spawnColumns.Sort();
 

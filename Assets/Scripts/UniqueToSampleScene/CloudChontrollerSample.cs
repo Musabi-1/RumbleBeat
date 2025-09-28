@@ -8,7 +8,7 @@ public class CloudChontrollerSample : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float boundaryBuffer = -2f;
     [SerializeField] private float stopTime = 1f;
-    [SerializeField] private Tilemap walkableTilemap;
+    [SerializeField] private TilemapLogic tilemapLogic;
 
     private float leftBoundary;
     private float rightBoundary;
@@ -16,20 +16,9 @@ public class CloudChontrollerSample : MonoBehaviour
 
     private void Start()
     {
-        if (walkableTilemap == null)
-        {
-            Debug.LogError("Tilemap not assigned");
-            return;
-        }
-
         lightningStrike = GetComponentInChildren<LightningStrike>();
 
-        BoundsInt bounds = walkableTilemap.cellBounds;
-        Vector3Int leftCell = new Vector3Int(bounds.xMin, bounds.yMin, 0);
-        Vector3Int rightCell = new Vector3Int(bounds.xMax - 1, bounds.yMin, 0);
-
-        leftBoundary = walkableTilemap.CellToWorld(leftCell).x - boundaryBuffer;
-        rightBoundary = walkableTilemap.CellToWorld(rightCell).x + walkableTilemap.cellSize.x + boundaryBuffer;
+        (leftBoundary, rightBoundary) = tilemapLogic.GetHorizontalBoundaries(boundaryBuffer);
 
         StartCoroutine(Patrol());
     }
