@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6fc63a3414ce946fc80571a6a223b246
+guid: ba2f4117144df4f4cb0fb95b7a516cc4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 400
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,127 +110,169 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Diablo_Damage_0
+      name: Drop_Default_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 2133.5
-        height: 2134
+        y: 6401.25
+        width: 2137.5
+        height: 2133.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc1a65fca40544b249a1f4829a2250a9
-      internalID: -1182054882
+      spriteID: 771b8dd48e05b4b77b514d640818634c
+      internalID: 151563504
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diablo_Damage_1
+      name: Drop_Default_1
       rect:
         serializedVersion: 2
-        x: 2133
-        y: 0
-        width: 2133.5
-        height: 2134
+        x: 2137
+        y: 6401.25
+        width: 2137.5
+        height: 2133.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9483beff2df13481a8d6498cc79cb6c9
-      internalID: -1294602751
+      spriteID: 9d8912451b25a43f19651db3c9c03afe
+      internalID: 209353389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diablo_Damage_2
+      name: Drop_Default_2
       rect:
         serializedVersion: 2
-        x: 4266
-        y: 0
-        width: 2133.5
-        height: 2134
+        x: 0
+        y: 4268.25
+        width: 2137.5
+        height: 2133.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 83496276c5fba4c18b335b95c59b9239
-      internalID: -1235918400
+      spriteID: 81b62011e34b24c4ea02ac244cda25f2
+      internalID: -740950620
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diablo_Damage_3
+      name: Drop_Default_3
       rect:
         serializedVersion: 2
-        x: 6399
-        y: 0
-        width: 2133.5
-        height: 2134
+        x: 2137
+        y: 4268.25
+        width: 2137.5
+        height: 2133.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 599f2d18b84524c2b98e2ccf9ef2bd71
-      internalID: -1800828708
+      spriteID: 651a2a3ec6bfb4c53b891699a42a6a42
+      internalID: -686323665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diablo_Damage_4
+      name: Drop_Default_4
       rect:
         serializedVersion: 2
-        x: 8532
-        y: 0
-        width: 2133.5
-        height: 2134
+        x: 0
+        y: 2135.25
+        width: 2137.5
+        height: 2133.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25f2bb2784d97484fb4253128e0ac001
-      internalID: -51027479
+      spriteID: 0ccc237aa4bd848028adf2ca29336377
+      internalID: -274110702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Diablo_Damage_5
+      name: Drop_Default_5
       rect:
         serializedVersion: 2
-        x: 10665
-        y: 0
-        width: 2133.5
-        height: 2134
+        x: 2137
+        y: 2135.25
+        width: 2137.5
+        height: 2133.75
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5894e04225d544599f9353313604028
-      internalID: -194577615
+      spriteID: 157b3dac46d6c4bb999fe5bc458c3d66
+      internalID: -1384923688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop_Default_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 2137.5
+        height: 2133.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f07bbf8693e34d75b2ced5ae705958a
+      internalID: 1732949282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Drop_Default_7
+      rect:
+        serializedVersion: 2
+        x: 2137
+        y: 2.25
+        width: 2137.5
+        height: 2133.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c26980b477b4baeb13983b29f6c443
+      internalID: 71529577
       vertices: []
       indices: 
       edges: []
@@ -246,12 +288,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Diablo_Damage_0: -1182054882
-      Diablo_Damage_1: -1294602751
-      Diablo_Damage_2: -1235918400
-      Diablo_Damage_3: -1800828708
-      Diablo_Damage_4: -51027479
-      Diablo_Damage_5: -194577615
+      Drop_Default_0: 151563504
+      Drop_Default_1: 209353389
+      Drop_Default_2: -740950620
+      Drop_Default_3: -686323665
+      Drop_Default_4: -274110702
+      Drop_Default_5: -1384923688
+      Drop_Default_6: 1732949282
+      Drop_Default_7: 71529577
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
