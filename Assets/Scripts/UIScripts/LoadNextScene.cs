@@ -11,6 +11,10 @@ public class LoadNextScene : MonoBehaviour
 
     private static bool playedEndTransition = false;
 
+    private void Awake()
+    {
+    }
+
     private void Start()
     {
         if (playedEndTransition)
@@ -26,7 +30,7 @@ public class LoadNextScene : MonoBehaviour
 
     public void LoadNextLevel()
     {
-        int levelIndex = Random.Range(1, SceneManager.sceneCountInBuildSettings - 1);
+        int levelIndex = SceneManager.GetActiveScene().buildIndex + 1;
         StartCoroutine(LoadLevel(levelIndex));
     }
 

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class StartScript : MonoBehaviour, IPointerClickHandler
+public class LoadNextSceneOnTouch : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField] private LoadNextScene loadNextScene;
     public void OnPointerClick(PointerEventData eventData)
     {
+        Debug.Log("clicked!");
         if (loadNextScene != null)
         {
             loadNextScene.LoadNextLevel();
